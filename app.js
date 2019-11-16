@@ -39,26 +39,43 @@ function updateGoldDis() {
   Gold Grams: ${totalGold}`
 }
 
+// buying functions. after completion, make buy_() functions dynamic, & fire 2 functions per buy click. One will update data, & the other will re-render the page
 function buyPickaxe() {
   pickaxeUp.quantity++
-  document.querySelector("#pickaxe").innerHTML = `
+  document.querySelector("#pickaxe-count").innerHTML = `
   Pickaxes: ${pickaxeUp.quantity}`
+
+  pickaxeUp.price *= 1.1
+  document.querySelector("#pickaxe-price").innerHTML = `
+  Gold Grams: ${pickaxeUp.price}`
 }
 
 function buyCart() {
   cartUp.quantity++
-  document.querySelector("#cart").innerHTML = `
+  document.querySelector("#cart-count").innerHTML = `
   Carts: ${cartUp.quantity}`
+
+  cartUp.price *= 1.1
+  document.querySelector("#cart-price").innerHTML = `
+  Gold Grams: ${cartUp.price}`
 }
 
 function buyMiner() {
   minerUp.quantity++
-  document.querySelector("#miner").innerHTML = `
+  document.querySelector("#miner-count").innerHTML = `
   Miners: ${minerUp.quantity}`
+
+  minerUp.price *= 1.1
+  document.querySelector("#miner-price").innerHTML = `
+  Gold Grams: ${minerUp.price}`
 }
 
 function buyShaft() {
   shaftUp.quantity++
-  document.querySelector("#shaft").innerHTML = `
+  document.querySelector("#shaft-count").innerHTML = `
   Mine Shafts: ${shaftUp.quantity}`
+
+  shaftUp.price *= 1.1
+  document.querySelector("#shaft-price").innerHTML = `
+  Gold Grams: ${shaftUp.price}`
 }
