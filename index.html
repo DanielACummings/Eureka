@@ -24,7 +24,7 @@
     <main>
       <div class="row">
         <div class="col-12">
-          <button onclick="mine(), updateGoldDis()"><img class="img-fluid"
+          <button onclick="mine(), updateGoldDis()"><img class="img-fluid" id="pic"
               src="https://searchengineland.com/figz/wp-content/seloads/2015/04/gold-mining-ss-1920.jpg"
               alt=""></button>
         </div>
@@ -43,15 +43,19 @@
 
           <button id="pickaxe-dis" onclick="buyPickaxe()" type="button" class="btn btn-warning">Buy Pickaxe</button>
           <h5 id="pickaxe-price">Gold Grams: 50</h5>
+          <h5>Each one mines +10 per click</h5>
 
           <button id="cart-dis" onclick="buyCart()" type="button" class="btn btn-warning">Buy Cart</button>
           <h5 id="cart-price">Gold Grams: 100</h5>
+          <h5>Each one mines +20 per click</h5>
 
           <button id="miner-dis" onclick="buyMiner()" type="button" class="btn btn-warning">Hire Miner</button>
           <h5 id="miner-price">Gold Grams: 1000</h5>
+          <h5>Auto-mines 30 GG per second</h5>
 
           <button id="shaft-dis" onclick="buyShaft()" type="button" class="btn btn-warning">Buy Mine Shaft</button>
           <h5 id="shaft-price">Gold Grams: 2000</h5>
+          <h5>Auto-mines 40 GG per second</h5>
         </div>
       </div>
     </main>
@@ -64,7 +68,7 @@
     </footer>
   </div>
 
-  <script onload="autoMiner(), autoShaft()" src="app.js"></script>
+  <script onload="autoDrawGold(), autoMiner(), autoShaft(), enablePickaxe()" src="app.js"></script>
 </body>
 
 </html>
