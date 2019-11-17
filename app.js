@@ -1,19 +1,18 @@
-/* TODO
+/* TODOS
 Turn all 4 upgrades into two dictionaries?
 
 Make methods collectAutoUpgrades & automaticUpgrade ?
 
+
 Make buy buttons disable = false once sufficient funds are reached
 
-Make pickaxes multiply click yield
-
-Make carts multiply click yield
+Bug: players can a make one-time purchase of items that they don't have enough money for. Afterwards, the buy button of that item is permanently disabled 
 */
 
 
 // data
 
-let totalGold = 0
+let totalGold = 50
 
 // variables for disabling
 let pickaxeDis = document.querySelector("#pickaxe-dis")
@@ -35,13 +34,13 @@ let cartOb = {
 }
 
 let minerOb = {
-  quantity: 1,
+  quantity: 0,
   price: 1000,
   multiplier: 30
 }
 
 let shaftOb = {
-  quantity: 1,
+  quantity: 0,
   price: 2000,
   multiplier: 40
 }
@@ -51,6 +50,13 @@ let shaftOb = {
 // generates gold by clicking pic
 function mine() {
   totalGold += 1
+  if (pickaxeOb.multiplier > 0) {
+    totalGold += pickaxeOb.quantity * pickaxeOb.multiplier
+  }
+
+  if (cartOb.multiplier > 0) {
+    totalGold += cartOb.quantity * cartOb.multiplier
+  }
 }
 
 function mineMulti(multi) {
