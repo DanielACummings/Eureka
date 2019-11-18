@@ -1,10 +1,3 @@
-/* TODOS
-Turn all 4 upgrades into two dictionaries?
-
-Make methods collectAutoUpgrades & automaticUpgrade ?
-*/
-
-
 // data
 let totalGold = 0
 
@@ -59,24 +52,7 @@ function mineMulti(multi) {
 // updates totalGold
 function drawGold() {
   document.querySelector("#gold-grams").innerHTML = `
-  Gold Grams: ${totalGold}`
-}
-
-// auto functions
-function autoMiner() {
-  if (minerOb.quantity > 0) {
-    setInterval(function () { mineMulti(minerOb.quantity * minerOb.multiplier) }, 1000)
-  }
-}
-
-function autoShaft() {
-  if (shaftOb.quantity > 0) {
-    setInterval(function () { mineMulti(shaftOb.quantity * shaftOb.multiplier) }, 1000)
-  }
-}
-
-function autoDrawGold() {
-  setInterval(function () { document.querySelector("#gold-grams").innerHTML = `Gold Grams: ${totalGold}` }, 1000)
+  Gold Grams: ${totalGold.toFixed(2)}`
 }
 
 // buy button functions
@@ -89,7 +65,9 @@ function buyPickaxe() {
     document.querySelector("#gold-grams").innerHTML = `Gold Grams: ${totalGold}`
 
     pickaxeOb.price *= 1.1
-    document.querySelector("#pickaxe-price").innerHTML = `Gold Grams: ${pickaxeOb.price}`
+    document.querySelector("#pickaxe-price").innerHTML = `Gold Grams: ${pickaxeOb.price.toFixed(2)}`
+
+
   }
 }
 
@@ -102,7 +80,9 @@ function buyCart() {
     document.querySelector("#gold-grams").innerHTML = `Gold Grams: ${totalGold}`
 
     cartOb.price *= 1.1
-    document.querySelector("#cart-price").innerHTML = `Gold Grams: ${cartOb.price}`
+    document.querySelector("#cart-price").innerHTML = `Gold Grams: ${cartOb.price.toFixed(2)}`
+
+
   }
 }
 
@@ -115,10 +95,9 @@ function buyMiner() {
     document.querySelector("#gold-grams").innerHTML = `Gold Grams: ${totalGold}`
 
     minerOb.price *= 1.1
-    document.querySelector("#miner-price").innerHTML = `Gold Grams: ${minerOb.price}`
+    document.querySelector("#miner-price").innerHTML = `Gold Grams: ${minerOb.price.toFixed(2)}`
 
-    autoMiner()
-    autoDrawGold()
+
   }
 }
 
@@ -131,9 +110,22 @@ function buyShaft() {
     document.querySelector("#gold-grams").innerHTML = `Gold Grams: ${totalGold}`
 
     shaftOb.price *= 1.1
-    document.querySelector("#shaft-price").innerHTML = `Gold Grams: ${shaftOb.price}`
+    document.querySelector("#shaft-price").innerHTML = `Gold Grams: ${shaftOb.price.toFixed(2)}`
 
-    autoShaft()
-    autoDrawGold()
+
   }
 }
+
+// new code for refactoring
+
+function auto() {
+  mineMulti(minerOb.quantity * minerOb.multiplier);
+  mineMulti(shaftOb.quantity * shaftOb.multiplier);
+  drawGold()
+}
+
+function start() {
+  setInterval(auto, 1000)
+}
+
+start()
