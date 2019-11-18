@@ -6,7 +6,7 @@ Make methods collectAutoUpgrades & automaticUpgrade ?
 
 
 // data
-let totalGold = 25
+let totalGold = 0
 
 // objects
 let pickaxeOb = {
@@ -24,14 +24,14 @@ let cartOb = {
 }
 
 let minerOb = {
-  quantity: 1,
+  quantity: 0,
   price: 1000,
   multiplier: 30,
   buyOn: 0
 }
 
 let shaftOb = {
-  quantity: 1,
+  quantity: 0,
   price: 2000,
   multiplier: 40,
   buyOn: 0
@@ -81,7 +81,7 @@ function autoDrawGold() {
 
 // buy button functions
 function buyPickaxe() {
-  if (totalGold > pickaxeOb.price) {
+  if (totalGold >= pickaxeOb.price) {
     pickaxeOb.quantity++
     document.querySelector("#pickaxe-count").innerHTML = `Pickaxes: ${pickaxeOb.quantity}`
 
@@ -94,7 +94,7 @@ function buyPickaxe() {
 }
 
 function buyCart() {
-  if (totalGold > cartOb.price) {
+  if (totalGold >= cartOb.price) {
     cartOb.quantity++
     document.querySelector("#cart-count").innerHTML = `Carts: ${cartOb.quantity}`
 
@@ -107,7 +107,7 @@ function buyCart() {
 }
 
 function buyMiner() {
-  if (totalGold > minerOb.price) {
+  if (totalGold >= minerOb.price) {
     minerOb.quantity++
     document.querySelector("#miner-count").innerHTML = `Miners: ${minerOb.quantity}`
 
@@ -120,7 +120,7 @@ function buyMiner() {
 }
 
 function buyShaft() {
-  if (totalGold > shaftOb.price) {
+  if (totalGold >= shaftOb.price) {
     shaftOb.quantity++
     document.querySelector("#shaft-count").innerHTML = `Mine Shafts: ${shaftOb.quantity}`
 
