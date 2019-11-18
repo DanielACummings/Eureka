@@ -87,7 +87,7 @@ function buyMiner() {
     document.querySelector("#gold-grams").innerHTML = `Gold Grams: ${totalGold}`
 
     minerOb.price *= 1.1
-    document.querySelector("#miner-price").innerHTML = `Gold Grams: ${minerOb.price.toFixed(2)}`
+    document.querySelector("#miner-price").innerHTML = `Hire Miner: ${minerOb.price.toFixed(2)}`
   }
 }
 
