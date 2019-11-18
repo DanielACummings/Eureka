@@ -6,28 +6,24 @@ let pickaxeOb = {
   quantity: 0,
   price: 25,
   multiplier: 10,
-  buyOn: 0
 }
 
 let cartOb = {
   quantity: 0,
   price: 100,
   multiplier: 20,
-  buyOn: 0
 }
 
 let minerOb = {
   quantity: 0,
   price: 1000,
   multiplier: 30,
-  buyOn: 0
 }
 
 let shaftOb = {
   quantity: 0,
   price: 2000,
   multiplier: 40,
-  buyOn: 0
 }
 
 // functions
@@ -66,8 +62,6 @@ function buyPickaxe() {
 
     pickaxeOb.price *= 1.1
     document.querySelector("#pickaxe-price").innerHTML = `Gold Grams: ${pickaxeOb.price.toFixed(2)}`
-
-
   }
 }
 
@@ -81,8 +75,6 @@ function buyCart() {
 
     cartOb.price *= 1.1
     document.querySelector("#cart-price").innerHTML = `Gold Grams: ${cartOb.price.toFixed(2)}`
-
-
   }
 }
 
@@ -96,8 +88,6 @@ function buyMiner() {
 
     minerOb.price *= 1.1
     document.querySelector("#miner-price").innerHTML = `Gold Grams: ${minerOb.price.toFixed(2)}`
-
-
   }
 }
 
@@ -111,8 +101,6 @@ function buyShaft() {
 
     shaftOb.price *= 1.1
     document.querySelector("#shaft-price").innerHTML = `Gold Grams: ${shaftOb.price.toFixed(2)}`
-
-
   }
 }
 
