@@ -118,6 +118,7 @@ function buyMiner() {
     document.querySelector("#miner-price").innerHTML = `Gold Grams: ${minerOb.price}`
 
     autoMiner()
+    autoDrawGold()
   }
 }
 
@@ -133,5 +134,6 @@ function buyShaft() {
     document.querySelector("#shaft-price").innerHTML = `Gold Grams: ${shaftOb.price}`
 
     autoShaft()
+    autoDrawGold()
   }
 }
